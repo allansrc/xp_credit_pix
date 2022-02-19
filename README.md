@@ -87,6 +87,8 @@ prod;
 flutter run -d all --flavor prod -t lib/flavors/main_production.dart
 ```
 
+or if you are using VSCode all debug/run profiles are added
+
 ## Create a new feature
 
 Every feature in this approach is an "micro app", it means that each feature can be added and removed as an plugin. to create an feature we recommend use flutter plugin/package creation.
@@ -101,6 +103,23 @@ flutter create --template=package feature_name
 
 We use modular_flutter for this project to manage Dependence Injection (DI) and routing.
 
+- To follow our binder pattern use the custom snippet `difeat` to generate the binderDI
+- To Feature Modules use `dimod` to generate the proper class base model.
+
+## Credentials
+
+To run this application you need to provide credentials, which will be loaded from the workspace/lib/app/core/networking/core.credentials.dart.
+
+- if `core.credentials.dart` file doesn't exist on the folder, please create it.
+- run `xpcred` snippet to generate the defaut class for Credentials. the output willbe something like that:
+
+```
+class CoreCredentials {
+    static const String clientID = '';
+    static const String secretKey = '';
+}
+```
+
 ## Refs
 
 A few resources to get you started:
@@ -112,3 +131,11 @@ A few resources to get you started:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+```
+
+```
+
+```
+
+```

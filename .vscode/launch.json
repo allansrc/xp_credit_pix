@@ -1,0 +1,45 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "xp_ob",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "xp_ob (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "banking",
+      "cwd": "features\\banking",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "banking (profile mode)",
+      "cwd": "features\\banking",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "investing",
+      "cwd": "features\\investing",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "investing (profile mode)",
+      "cwd": "features\\investing",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    }
+  ]
+}
