@@ -2,6 +2,7 @@ name: app_dependences
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
+publish_to: "none"
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
@@ -20,6 +21,8 @@ dependencies:
   permission_handler: ^9.1.0
   dartz: ^0.10.1
   dio: ^4.0.4
+  xp_custom_either:
+    path: "../../features/xp_either"
 
 dev_dependencies:
   flutter_test:
