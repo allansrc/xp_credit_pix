@@ -38,7 +38,7 @@ main_app
 ┣ README.md
 ┃
 ┃
-┣ shared            // feature's shared dependences and developer dependences
+┣ shared                   // feature's shared dependences and developer dependences
 ┃   ┗ shared 1
 ┃       ┣ shared 2
 ┃       ┗ ... 
