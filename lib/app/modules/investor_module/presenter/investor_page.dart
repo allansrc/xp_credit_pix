@@ -76,7 +76,9 @@ class _InvestorPageState extends State<InvestorPage> {
               ),
               Center(
                 child: XPElevetedButtom(
-                    width: 300, text: 'Responder questionário'),
+                    onpressed: () {},
+                    width: 300,
+                    text: 'Responder questionário'),
               ),
               Center(
                 child: XPButtom(
