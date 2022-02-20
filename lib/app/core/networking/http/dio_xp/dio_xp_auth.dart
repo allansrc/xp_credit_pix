@@ -1,12 +1,12 @@
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 
-import '../interceptors/auth_interceptors.dart';
+import '../interceptors/authenticator_interceptors.dart';
 import '../interceptors/domain_interceptors.dart';
 
-class CustomDioAuth with DioMixin implements IHttpService {
+class DioXPAuth with DioMixin implements IHttpService {
   final DomainInterceptors _domainInterceptor;
-  final AuthInterceptors _authInterceptor;
+  final AuthenticatorInterceptors _authInterceptor;
 
   @override
   HttpClientAdapter httpClientAdapter = DefaultHttpClientAdapter();
@@ -14,7 +14,7 @@ class CustomDioAuth with DioMixin implements IHttpService {
   @override
   final BaseOptions options;
 
-  CustomDioAuth(this.options, this._domainInterceptor, this._authInterceptor) {
+  DioXPAuth(this.options, this._domainInterceptor, this._authInterceptor) {
     setupInterceptors();
   }
 

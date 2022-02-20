@@ -1,12 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import '../../../modules/auth/stores/auth_store.dart';
-import '../../enviroment_variables/enviroment_variables.dart';
-// import 'package:flutter_modular/flutter_modular.dart';
+import 'package:xp_ob/app/core/networking/xp_api_endpoints.dart';
+import 'package:xp_ob/app/modules/authenticator_module/store/authenticator_store.dart';
 
 class DomainInterceptors extends Interceptor {
-  final AuthStore authStore = Modular.get<AuthStore>();
+  final AuthenticatorStore authStore = Modular.get<AuthenticatorStore>();
 
   DomainInterceptors();
 
@@ -16,9 +14,8 @@ class DomainInterceptors extends Interceptor {
   }
 
   @override
-  Future onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
-    options.baseUrl = EnviromentVariables().urlDomain;
+  Future onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
+    options.baseUrl = XPAPIEndpoints.baseUrl;
     return super.onRequest(options, handler);
   }
 }

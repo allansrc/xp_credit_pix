@@ -1,21 +1,14 @@
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:xp_ob/app/core/networking/http/interceptors/authenticator_interceptors.dart';
+import 'package:xp_ob/app/core/networking/http/interceptors/domain_interceptors.dart';
 
-import '../interceptors/auth_interceptors.dart';
-import '../interceptors/domain_interceptors.dart';
-import '../interceptors/queue_interceptors.dart';
-
-// ignore: prefer_mixin
-class CustomDio with DioMixin implements IHttpService {
-  final AuthInterceptors _authInterceptor;
+class DioXP with DioMixin implements IHttpService {
+  final AuthenticatorInterceptors _authInterceptor;
   final DomainInterceptors _domainInterceptor;
-  // ignore: unused_field
-  final QueueInterceptors _queueInterceptors;
-  // final String url;
 
   @override
   HttpClientAdapter httpClientAdapter = DefaultHttpClientAdapter()
-    // ignore: body_might_complete_normally_nullable
     ..onHttpClientCreate = (client) {
       client.badCertificateCallback = (cert, host, port) => true;
     };
@@ -23,7 +16,11 @@ class CustomDio with DioMixin implements IHttpService {
   @override
   final BaseOptions options;
 
-  CustomDio(this.options, this._authInterceptor, this._domainInterceptor, this._queueInterceptors) {
+  DioXP(
+    this.options,
+    this._authInterceptor,
+    this._domainInterceptor,
+  ) {
     setupInterceptors();
   }
 
@@ -31,7 +28,6 @@ class CustomDio with DioMixin implements IHttpService {
   void setupInterceptors() {
     interceptors.add(_authInterceptor);
     interceptors.add(_domainInterceptor);
-    // interceptors.add(_queueInterceptors);
   }
 }
 

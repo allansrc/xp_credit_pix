@@ -2,6 +2,8 @@
 
 A new Flutter project: Built in the event HackaXP
 
+- this apps requires Dart SDK version >=2.16.0
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
