@@ -2,6 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'presenter/investor_page.dart';
 import 'presenter/pages/investor_profile_page.dart';
+import 'presenter/pages/openfinance_profile_page.dart';
 
 class InvestorModule extends Module {
   @override
@@ -18,6 +19,6 @@ class InvestorModule extends Module {
         ChildRoute('/investor-profile',
             child: (_, args) => const InvestorProfilePage()),
         ChildRoute('/openfinance-profile',
-            child: (_, args) => const InvestorProfilePage()),
+            child: (_, args) => const OpenFinanceProfilePage()),
       ];
 }

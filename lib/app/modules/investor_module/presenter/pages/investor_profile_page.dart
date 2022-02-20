@@ -162,7 +162,8 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const XPElevetedButtom(
+      floatingActionButton: XPElevetedButtom(
+        onpressed: () => Navigator.of(context).pop(),
         width: 360,
         text: 'Trocar perfil de investimentos',
       ),

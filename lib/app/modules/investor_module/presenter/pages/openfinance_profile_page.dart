@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:xp_ob/app/core/theme/colors.dart';
-import 'package:xp_ob/app/core/theme/widgets/button.dart';
+import 'package:xp_ob/app/core/theme/widgets/card_wrap.dart';
 import 'package:xp_ob/app/core/theme/widgets/eleveted_button.dart';
 
-class InvestorProfilePage extends StatefulWidget {
-  const InvestorProfilePage({Key? key}) : super(key: key);
+class OpenFinanceProfilePage extends StatefulWidget {
+  const OpenFinanceProfilePage({Key? key}) : super(key: key);
 
   @override
-  _InvestorProfilePageState createState() => _InvestorProfilePageState();
+  OpenFinanceProfilePageState createState() => OpenFinanceProfilePageState();
 }
 
-class _InvestorProfilePageState extends State<InvestorProfilePage> {
+class OpenFinanceProfilePageState extends State<OpenFinanceProfilePage> {
   @override
   Widget build(BuildContext context) {
     final dimentions = MediaQuery.of(context).size;
@@ -26,7 +26,6 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          height: dimentions.height,
           width: dimentions.width,
           decoration: const BoxDecoration(),
           child: Column(
@@ -36,7 +35,7 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
-                  'Você tem o perfil de investimentos',
+                  'Investimentos recomendados para o seu perfil',
                   style: TextStyle(fontSize: 16, color: Colors.grey[700]),
                 ),
               ),
@@ -52,112 +51,40 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Text(
-                  'O investidor com perfil conservador possui segurança'
-                  ' como ponto decisivo para suas aplicações.\n \n'
-                  'Em razão de suas baixa tolerância ao risco,'
-                  ' esta pessoa busca retorno ao longo prazo'
-                  ' e produtos que objetivam a preservação do patrimômio.',
-                  style: TextStyle(fontSize: 16, color: Colors.grey[900]),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  children: [
-                    Text(
-                      'PERFIS DE INVESTIMENTOS EXISTENTES',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey[700],
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    const Icon(
-                      Icons.arrow_forward,
-                      color: XPColors.yellow,
-                    )
-                  ],
-                ),
-              ),
-              const Padding(
-                  padding: EdgeInsets.all(18.0),
-                  child: Center(
-                    child: Icon(
-                      Icons.align_vertical_bottom_sharp,
-                      size: 32,
-                      color: Colors.grey,
-                    ),
-                  )),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Center(
-                  child: Text(
-                    'Risco da sua carteira',
-                    style: TextStyle(fontSize: 16, color: Colors.grey[900]),
+              Wrap(
+                children: [
+                  XPCardWrap(
+                    title: 'CDBs',
+                    ontap: () {},
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          '0 pt',
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.grey[900],
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Risco atual da sua carteira',
-                          style:
-                              TextStyle(fontSize: 12, color: Colors.grey[900]),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          '0 - 5 pts',
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.grey[900],
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Variação de risco do seu perfil',
-                          style:
-                              TextStyle(fontSize: 12, color: Colors.grey[900]),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 18),
-              const Center(
-                child: XPButtom(
-                  width: 360,
-                  text: 'Visualizar investimentos sugeridos',
-                  textColor: XPColors.backgroundDarker,
-                ),
-              ),
+                  XPCardWrap(
+                    title: 'LCIs',
+                    ontap: () {},
+                  ),
+                  XPCardWrap(
+                    title: 'LCAs',
+                    ontap: () {},
+                  ),
+                  XPCardWrap(
+                    title: 'CRIs',
+                    ontap: () {},
+                  ),
+                  XPCardWrap(
+                    title: 'CRAs',
+                    ontap: () {},
+                  ),
+                ],
+              )
             ],
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const XPElevetedButtom(
+      floatingActionButton: XPElevetedButtom(
+        onpressed: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).pop();
+        },
         text: 'Trocar perfil de investimentos',
         width: 360,
       ),
