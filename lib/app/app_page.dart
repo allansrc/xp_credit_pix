@@ -12,7 +12,7 @@ class _AppPageState extends State<AppPage> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 400), () {
-      Modular.to.pushNamed('/authenticator');
+      Modular.to.pushReplacementNamed('/authenticator/');
     });
     super.initState();
   }
