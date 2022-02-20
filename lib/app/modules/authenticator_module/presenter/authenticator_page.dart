@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:xp_ob/app/core/theme/colors.dart';
 import 'package:xp_ob/app/core/theme/widgets/button.dart';
 import 'package:xp_ob/app/core/theme/widgets/eleveted_button.dart';
@@ -14,6 +15,7 @@ class AuthenticatorPage extends StatefulWidget {
 
 class _AuthenticatorPageState extends State<AuthenticatorPage> {
   bool rememberMe = false;
+  bool loadingState = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -102,7 +104,28 @@ class _AuthenticatorPageState extends State<AuthenticatorPage> {
             const SizedBox(height: 24),
             Container(
               margin: const EdgeInsets.all(16),
-              child: const XPElevetedButtom(text: 'Continuar'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  XPElevetedButtom(
+                    text: 'Continuar',
+                    onpressed: () {
+                      setState(() {
+                        // TODO: (allansrc) change it (if you got time) to triple state
+                        loadingState = !loadingState;
+                      });
+                      Future.delayed(const Duration(milliseconds: 500), () {
+                        Modular.to.pushReplacementNamed('/home/');
+                      });
+                    },
+                  ),
+                  if (loadingState) ...{
+                    const CircularProgressIndicator(
+                      color: XPColors.yellow,
+                    )
+                  },
+                ],
+              ),
             ),
           ],
         ),
