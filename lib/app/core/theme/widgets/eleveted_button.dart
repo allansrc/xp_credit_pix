@@ -4,10 +4,11 @@ import '../colors.dart';
 
 class XPElevetedButtom extends StatelessWidget {
   final String text;
+  final double? width;
   final Color? color;
   final Function()? onpressed;
   const XPElevetedButtom(
-      {Key? key, required this.text, this.onpressed, this.color})
+      {Key? key, required this.text, this.onpressed, this.color, this.width})
       : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class XPElevetedButtom extends StatelessWidget {
         constraints: BoxConstraints(
           maxHeight: constrains.maxHeight,
           maxWidth: constrains.maxWidth,
-          minWidth: 256,
+          minWidth: width ?? 256,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: ElevatedButton(

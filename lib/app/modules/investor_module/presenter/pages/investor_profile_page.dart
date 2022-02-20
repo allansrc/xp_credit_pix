@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:xp_ob/app/core/theme/colors.dart';
 import 'package:xp_ob/app/core/theme/widgets/button.dart';
 import 'package:xp_ob/app/core/theme/widgets/eleveted_button.dart';
 
-class InvestorPage extends StatefulWidget {
-  const InvestorPage({Key? key}) : super(key: key);
+class InvestorProfilePage extends StatefulWidget {
+  const InvestorProfilePage({Key? key}) : super(key: key);
 
   @override
-  _InvestorPageState createState() => _InvestorPageState();
+  _InvestorProfilePageState createState() => _InvestorProfilePageState();
 }
 
-class _InvestorPageState extends State<InvestorPage> {
+class _InvestorProfilePageState extends State<InvestorProfilePage> {
   @override
   Widget build(BuildContext context) {
     final dimentions = MediaQuery.of(context).size;
@@ -24,6 +23,7 @@ class _InvestorPageState extends State<InvestorPage> {
       body: SingleChildScrollView(
         child: Container(
           width: dimentions.width,
+          decoration: const BoxDecoration(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -81,9 +81,6 @@ class _InvestorPageState extends State<InvestorPage> {
               Center(
                 child: XPButtom(
                   width: 300,
-                  onpressed: () {
-                    Modular.to.pushNamed('/investor/investor-profile');
-                  },
                   text: 'Migrar informações OpenFinance',
                   textColor: XPColors.backgroundDarker,
                 ),
