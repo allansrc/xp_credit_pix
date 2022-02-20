@@ -4,8 +4,15 @@ import '../colors.dart';
 
 class XPButtom extends StatelessWidget {
   final String text;
+  final Color? textColor;
+  final double? width;
   final Function()? onpressed;
-  const XPButtom({Key? key, required this.text, this.onpressed})
+  const XPButtom(
+      {Key? key,
+      required this.text,
+      this.onpressed,
+      this.textColor,
+      this.width})
       : super(key: key);
 
   @override
@@ -15,14 +22,14 @@ class XPButtom extends StatelessWidget {
         constraints: BoxConstraints(
           maxHeight: constrains.maxHeight,
           maxWidth: constrains.maxWidth,
-          minWidth: 172,
+          minWidth: width ?? 172,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: TextButton(
           onPressed: onpressed,
           child: Text(
             text,
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: textColor ?? Colors.white),
           ),
           style: ButtonStyle(
             shape: MaterialStateProperty.all(
