@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:xp_ob/app/core/theme/colors.dart';
+
+import 'widgets/appbar_home.dart';
+import 'widgets/home_tab/body_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,8 +12,82 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // TODO (allansrc) implements (got time) controller/store
+
+  int _currentIndex = 0;
+  var listBodiesHome = [
+    [
+      AppBarHome(),
+      BodyHome(),
+    ],
+    [
+      // AppBarHome(),
+      BodyHome(),
+    ],
+    [
+      AppBarHome(),
+      // BodyHome(),
+    ],
+    [
+      // AppBarHome(),
+      BodyHome(),
+    ],
+    [
+      AppBarHome(),
+      BodyHome(),
+    ],
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: XPColors.black,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [...listBodiesHome[_currentIndex]],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: XPColors.backgroundDarker,
+        child: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              backgroundColor: XPColors.backgroundDarker,
+              icon: Icon(Icons.home),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: XPColors.backgroundDarker,
+              icon: Icon(Icons.auto_graph_rounded),
+              label: 'Investir',
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: XPColors.backgroundDarker,
+              icon: Icon(Icons.monetization_on_outlined),
+              label: 'Conta',
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: XPColors.backgroundDarker,
+              icon: Icon(Icons.add_chart_outlined),
+              label: 'Bolsa',
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: XPColors.backgroundDarker,
+              icon: Icon(Icons.person),
+              label: 'Perfil',
+            ),
+          ],
+          currentIndex: _currentIndex,
+          selectedItemColor: XPColors.yellow,
+          onTap: (page) {
+            setState(() {
+              _currentIndex = page;
+            });
+          },
+        ),
+      ),
+    );
   }
 }

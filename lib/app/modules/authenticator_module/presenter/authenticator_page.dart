@@ -114,7 +114,7 @@ class _AuthenticatorPageState extends State<AuthenticatorPage> {
                         // TODO: (allansrc) change it (if you got time) to triple state
                         loadingState = !loadingState;
                       });
-                      Future.delayed(const Duration(milliseconds: 500), () {
+                      Future.delayed(const Duration(milliseconds: 800), () {
                         Modular.to.pushReplacementNamed('/home/');
                       });
                     },
