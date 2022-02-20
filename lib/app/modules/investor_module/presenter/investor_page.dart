@@ -12,6 +12,7 @@ class InvestorPage extends StatefulWidget {
 }
 
 class _InvestorPageState extends State<InvestorPage> {
+  bool itsLoading = false;
   @override
   Widget build(BuildContext context) {
     final dimentions = MediaQuery.of(context).size;
@@ -81,13 +82,32 @@ class _InvestorPageState extends State<InvestorPage> {
                     text: 'Responder questionário'),
               ),
               Center(
-                child: XPButtom(
-                  width: 300,
-                  onpressed: () {
-                    Modular.to.pushNamed('/investor/investor-profile');
-                  },
-                  text: 'Migrar informações OpenFinance',
-                  textColor: XPColors.backgroundDarker,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    XPButtom(
+                      width: 300,
+                      onpressed: () async {
+                        setState(() {
+                          itsLoading = !itsLoading;
+                        });
+                        await Future.delayed(const Duration(milliseconds: 800),
+                            () {
+                          Modular.to.pushNamed('/investor/investor-profile');
+                        });
+                        setState(() {
+                          itsLoading = !itsLoading;
+                        });
+                      },
+                      text: 'Migrar informações OpenFinance',
+                      textColor: XPColors.backgroundDarker,
+                    ),
+                    if (itsLoading) ...{
+                      const CircularProgressIndicator(
+                        color: XPColors.yellow,
+                      ),
+                    },
+                  ],
                 ),
               )
             ],

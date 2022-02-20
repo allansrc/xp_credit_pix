@@ -16,6 +16,8 @@ class InvestorModule extends Module {
           child: (_, args) => const InvestorPage(),
         ),
         ChildRoute('/investor-profile',
-            child: (_, args) => InvestorProfilePage()),
+            child: (_, args) => const InvestorProfilePage()),
+        ChildRoute('/openfinance-profile',
+            child: (_, args) => const InvestorProfilePage()),
       ];
 }

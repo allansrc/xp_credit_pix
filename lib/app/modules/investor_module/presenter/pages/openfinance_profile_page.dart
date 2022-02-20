@@ -3,8 +3,6 @@ import 'package:xp_ob/app/core/theme/colors.dart';
 import 'package:xp_ob/app/core/theme/widgets/button.dart';
 import 'package:xp_ob/app/core/theme/widgets/eleveted_button.dart';
 
-import 'package:flutter_modular/flutter_modular.dart';
-
 class InvestorProfilePage extends StatefulWidget {
   const InvestorProfilePage({Key? key}) : super(key: key);
 
@@ -22,7 +20,7 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text(
-          'Perfil de investimento',
+          'Carteira OpenFinance',
           style: TextStyle(color: XPColors.background),
         ),
       ),
@@ -147,12 +145,9 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
                 ),
               ),
               const SizedBox(height: 18),
-              Center(
+              const Center(
                 child: XPButtom(
                   width: 360,
-                  onpressed: () {
-                    Modular.to.pushNamed('/investor/openfinance-profile');
-                  },
                   text: 'Visualizar investimentos sugeridos',
                   textColor: XPColors.backgroundDarker,
                 ),
@@ -163,8 +158,8 @@ class _InvestorProfilePageState extends State<InvestorProfilePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: const XPElevetedButtom(
-        width: 360,
         text: 'Trocar perfil de investimentos',
+        width: 360,
       ),
     );
   }
