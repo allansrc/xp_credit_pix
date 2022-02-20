@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xp_ob/app/core/theme/colors.dart';
 import 'package:xp_ob/app/core/theme/widgets/button.dart';
+import 'package:xp_ob/app/core/theme/widgets/eleveted_button.dart';
+import 'package:xp_ob/app/core/theme/widgets/switch.dart';
 import 'package:xp_ob/app/core/theme/widgets/textfiled.dart';
 
 class AuthenticatorPage extends StatefulWidget {
@@ -11,6 +13,7 @@ class AuthenticatorPage extends StatefulWidget {
 }
 
 class _AuthenticatorPageState extends State<AuthenticatorPage> {
+  bool rememberMe = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -74,6 +77,32 @@ class _AuthenticatorPageState extends State<AuthenticatorPage> {
                   style: TextStyle(color: XPColors.yellow),
                 ),
               ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  XPSwitch(
+                    value: rememberMe,
+                    onChanged: (value) {
+                      setState(() {
+                        rememberMe = value;
+                      });
+                    },
+                  ),
+                  const SizedBox(width: 24),
+                  const Text(
+                    'Lembrar meus dados',
+                    style: TextStyle(color: XPColors.yellow),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 24),
+            Container(
+              margin: const EdgeInsets.all(16),
+              child: const XPElevetedButtom(text: 'Continuar'),
             ),
           ],
         ),
