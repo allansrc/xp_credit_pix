@@ -5,6 +5,7 @@ A new Flutter project: Built in the event HackaXP
 ![app](assets/app.gif)
 
 - this apps requires Dart SDK version >=2.16.0
+- an APK file is avaliable on release section
 
 ## Getting Started
 
@@ -110,6 +111,10 @@ We use modular_flutter for this project to manage Dependence Injection (DI) and 
 - To follow our binder pattern use the custom snippet `difeat` to generate the binderDI
 - To Feature Modules use `dimod` to generate the proper class base model.
 
+## Unit, Integration and Widgets Tests
+
+Tests were ainmed for this project. But has come some embezzlement that make it not able for this stage of development.
+
 ## Credentials
 
 To run this application you need to provide credentials, which will be loaded from the workspace/lib/app/core/networking/core.credentials.dart.
@@ -123,6 +128,26 @@ class CoreCredentials {
     static const String secretKey = '';
 }
 ```
+
+## Done Services
+
+All layer from Authentication to main api `/oauth2/v1/access-token`:
+
+- domain
+- usecase
+- infra
+- repositories
+- errors handler
+- mappers
+- custom either
+
+## Pending Services
+
+All Open Baning api consuming is pending.
+
+## UI
+
+All main UI ainmed are done. some integration to services (stores/controllers) are pending to implementation
 
 ## Refs
 
