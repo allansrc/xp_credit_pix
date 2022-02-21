@@ -3,6 +3,7 @@ import 'package:xp_ob/app/core/theme/colors.dart';
 
 import 'widgets/appbar_home.dart';
 import 'widgets/home_tab/body_home.dart';
+import 'widgets/investiment_tab/investiment_appbar.dart';
 import 'widgets/profile_tab/appbar_profile.dart';
 import 'widgets/profile_tab/body_profile.dart';
 
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     ],
     [
       // AppBarHome(),
-      BodyHome(),
+      InvestimentsPage(),
     ],
     [
       AppBarHome(),
