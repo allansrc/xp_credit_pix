@@ -1,6 +1,7 @@
 # xp_credit_pix
 
 A new Flutter project: Built in the event HackaXP
+![app](assets/app.gif)
 
 - this apps requires Dart SDK version >=2.16.0
 

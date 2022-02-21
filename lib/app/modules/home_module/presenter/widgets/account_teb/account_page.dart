@@ -5,14 +5,14 @@ import 'package:xp_ob/app/core/theme/widgets/button.dart';
 import 'package:xp_ob/app/core/theme/widgets/card_tile.dart';
 import 'package:xp_ob/app/core/theme/widgets/card_wrap.dart';
 
-class InvestimentsPage extends StatefulWidget {
-  const InvestimentsPage({Key? key}) : super(key: key);
+class AccountPage extends StatefulWidget {
+  const AccountPage({Key? key}) : super(key: key);
 
   @override
-  _InvestimentsPageState createState() => _InvestimentsPageState();
+  AccountPageState createState() => AccountPageState();
 }
 
-class _InvestimentsPageState extends State<InvestimentsPage> {
+class AccountPageState extends State<AccountPage> {
   bool isObscured = true;
   @override
   Widget build(BuildContext context) {

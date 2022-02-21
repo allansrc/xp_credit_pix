@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:xp_ob/app/core/theme/colors.dart';
 
 import 'widgets/appbar_home.dart';
+import 'widgets/broker_tab/broker_page.dart';
 import 'widgets/home_tab/body_home.dart';
-import 'widgets/investiment_tab/investiment_appbar.dart';
+import 'widgets/account_teb/account_page.dart';
+import 'widgets/investiment_tab/investments_page.dart';
 import 'widgets/profile_tab/appbar_profile.dart';
 import 'widgets/profile_tab/body_profile.dart';
 
@@ -18,27 +20,12 @@ class _HomePageState extends State<HomePage> {
   // TODO (allansrc) implements (got time) controller/store
 
   int _currentIndex = 0;
-  var listBodiesHome = [
-    const [
-      AppBarHome(),
-      BodyHome(),
-    ],
-    [
-      // AppBarHome(),
-      InvestimentsPage(),
-    ],
-    [
-      AppBarHome(),
-      // BodyHome(),
-    ],
-    [
-      // AppBarHome(),
-      BodyHome(),
-    ],
-    const [
-      AppBarProfile(),
-      ProfileHome(),
-    ],
+  var listBodiesHome = const [
+    [AppBarHome(), BodyHome()],
+    [InvestmentsPage()],
+    [AccountPage()],
+    [BrokerPage()],
+    [AppBarProfile(), ProfileHome()],
   ];
 
   @override
