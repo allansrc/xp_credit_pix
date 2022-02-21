@@ -1,4 +1,4 @@
-# xp_ob
+# xp_credit_pix
 
 A new Flutter project: Built in the event HackaXP
 

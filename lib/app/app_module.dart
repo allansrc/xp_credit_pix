@@ -8,6 +8,7 @@ import 'package:xp_ob/app/modules/authenticator_module/authenticator_module.dart
 import 'package:xp_ob/app/modules/home_module/home_module.dart';
 
 import 'modules/investor_module/investor_module.dart';
+import 'modules/pix_module/pix_module.dart';
 
 class AppModule extends Module {
   @override
@@ -26,6 +27,7 @@ class AppModule extends Module {
   final List<ModularRoute> routes = [
     ChildRoute('/', child: (_, args) => const AppPage()),
     ModuleRoute('/home', module: HomeModule()),
+    ModuleRoute('/pix', module: PixModule()),
     ModuleRoute('/investor', module: InvestorModule()),
     ModuleRoute('/authenticator', module: AuthenticatorModule()),
   ];

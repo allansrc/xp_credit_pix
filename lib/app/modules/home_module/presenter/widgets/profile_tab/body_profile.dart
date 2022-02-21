@@ -30,58 +30,66 @@ class ProfileHome extends StatelessWidget {
             ),
           ),
           Wrap(
-            children: const [
+            children: [
               XPCardWrap(
-                icon: Icon(
-                  Icons.done,
-                  color: XPColors.yellow,
-                ),
-                title: 'Aprovações',
-                colorCard: XPColors.background,
-                colorFont: XPColors.backgroundLighter,
-              ),
-              XPCardWrap(
-                icon: Icon(
-                  Icons.document_scanner_outlined,
-                  color: XPColors.yellow,
-                ),
-                title: 'Ordens',
-                colorCard: XPColors.background,
-                colorFont: XPColors.backgroundLighter,
-              ),
-              XPCardWrap(
-                icon: Icon(
-                  Icons.security,
-                  color: XPColors.yellow,
-                ),
-                title: 'Token',
-                colorCard: XPColors.background,
-                colorFont: XPColors.backgroundLighter,
-              ),
-              XPCardWrap(
-                icon: Icon(
-                  Icons.dashboard_customize,
-                  color: XPColors.yellow,
-                ),
-                title: 'Extrato',
-                colorCard: XPColors.background,
-                colorFont: XPColors.backgroundLighter,
-              ),
-              XPCardWrap(
-                icon: Icon(
+                icon: const Icon(
                   Icons.transform_outlined,
                   color: XPColors.yellow,
                 ),
                 title: 'Pix',
+                ontap: () {
+                  Modular.to.pushNamed('/pix');
+                },
                 colorCard: XPColors.background,
                 colorFont: XPColors.backgroundLighter,
               ),
               XPCardWrap(
-                icon: Icon(
+                icon: const Icon(
+                  Icons.done,
+                  color: XPColors.yellow,
+                ),
+                title: 'Aprovações',
+                ontap: () {},
+                colorCard: XPColors.background,
+                colorFont: XPColors.backgroundLighter,
+              ),
+              XPCardWrap(
+                icon: const Icon(
+                  Icons.document_scanner_outlined,
+                  color: XPColors.yellow,
+                ),
+                title: 'Ordens',
+                ontap: () {},
+                colorCard: XPColors.background,
+                colorFont: XPColors.backgroundLighter,
+              ),
+              XPCardWrap(
+                icon: const Icon(
+                  Icons.security,
+                  color: XPColors.yellow,
+                ),
+                title: 'Token',
+                ontap: () {},
+                colorCard: XPColors.background,
+                colorFont: XPColors.backgroundLighter,
+              ),
+              XPCardWrap(
+                icon: const Icon(
+                  Icons.dashboard_customize,
+                  color: XPColors.yellow,
+                ),
+                title: 'Extrato',
+                ontap: () {},
+                colorCard: XPColors.background,
+                colorFont: XPColors.backgroundLighter,
+              ),
+              XPCardWrap(
+                icon: const Icon(
                   Icons.outbond,
                   color: XPColors.yellow,
                 ),
                 title: 'Transferir',
+                ontap: () {},
                 colorCard: XPColors.background,
                 colorFont: XPColors.backgroundLighter,
               ),
