@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:xp_ob/app/core/theme/colors.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:xp_ob/app/core/theme/widgets/card_tile.dart';
 import 'package:xp_ob/app/core/theme/widgets/card_wrap.dart';
 
@@ -38,7 +38,7 @@ class ProfileHome extends StatelessWidget {
                 ),
                 title: 'Pix',
                 ontap: () {
-                  Modular.to.pushNamed('/pix');
+                  Modular.to.pushNamed('/pix/');
                 },
                 colorCard: XPColors.background,
                 colorFont: XPColors.backgroundLighter,

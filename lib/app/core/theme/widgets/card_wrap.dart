@@ -20,39 +20,42 @@ class XPCardWrap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shadowColor: Colors.white70,
-      color: colorCard ?? Colors.transparent,
-      child: LayoutBuilder(builder: (context, constraints) {
-        return Container(
-          constraints: BoxConstraints(
-            maxHeight: constraints.maxHeight,
-            minHeight: constraints.minHeight,
-            minWidth: width ?? 164,
-          ),
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (icon == null) ...{
-                const Icon(Icons.add_chart),
-              } else ...{
-                icon!
-              },
-              const SizedBox(height: 18),
-              Text(
-                title,
-                overflow: TextOverflow.clip,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: colorFont ?? XPColors.black,
-                  fontSize: 18,
+    return InkWell(
+      onTap: ontap,
+      child: Card(
+        shadowColor: Colors.white70,
+        color: colorCard ?? Colors.transparent,
+        child: LayoutBuilder(builder: (context, constraints) {
+          return Container(
+            constraints: BoxConstraints(
+              maxHeight: constraints.maxHeight,
+              minHeight: constraints.minHeight,
+              minWidth: width ?? 164,
+            ),
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (icon == null) ...{
+                  const Icon(Icons.add_chart),
+                } else ...{
+                  icon!
+                },
+                const SizedBox(height: 18),
+                Text(
+                  title,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: colorFont ?? XPColors.black,
+                    fontSize: 18,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        );
-      }),
+              ],
+            ),
+          );
+        }),
+      ),
     );
   }
 }

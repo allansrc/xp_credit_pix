@@ -46,7 +46,7 @@ class AppBarProfile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Olá, José',
+                  'José Doyle',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
