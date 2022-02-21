@@ -39,15 +39,14 @@ class BodyHome extends StatelessWidget {
           ),
           XPCardTile(
             ontap: () {},
-            title: 'Descubra o seu perfil de investidor',
+            title: 'Veja como é fácil transferir para a sua Conta XP',
             description:
-                'Seu perfil vai ajudar na escolha dos melhores investimentos para você',
+                'Transfira o dinheiro que deseja investir com apenas alguns passos',
           ),
           XPCardTile(
             ontap: () {},
-            title: 'Descubra o seu perfil de investidor',
-            description:
-                'Seu perfil vai ajudar na escolha dos melhores investimentos para você',
+            title: 'Faça seu primeiro investimento',
+            description: 'Falta pouco para você se tornar um investidor',
           ),
         ],
       ),

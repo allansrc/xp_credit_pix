@@ -3,6 +3,8 @@ import 'package:xp_ob/app/core/theme/colors.dart';
 
 import 'widgets/appbar_home.dart';
 import 'widgets/home_tab/body_home.dart';
+import 'widgets/profile_tab/appbar_profile.dart';
+import 'widgets/profile_tab/body_profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   int _currentIndex = 0;
   var listBodiesHome = [
-    [
+    const [
       AppBarHome(),
       BodyHome(),
     ],
@@ -32,9 +34,9 @@ class _HomePageState extends State<HomePage> {
       // AppBarHome(),
       BodyHome(),
     ],
-    [
-      AppBarHome(),
-      BodyHome(),
+    const [
+      AppBarProfile(),
+      ProfileHome(),
     ],
   ];
 

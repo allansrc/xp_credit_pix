@@ -5,12 +5,20 @@ class XPCardTile extends StatelessWidget {
   final void Function() ontap;
   final String title;
   final String description;
+  final Widget? icon;
+  final Color? color;
+  final Color? colorText;
+  final bool? boolSpacer;
 
   const XPCardTile(
       {Key? key,
       required this.ontap,
       required this.title,
-      required this.description})
+      required this.description,
+      this.icon,
+      this.color,
+      this.colorText,
+      this.boolSpacer = false})
       : super(key: key);
 
   @override
@@ -22,21 +30,22 @@ class XPCardTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
-          color: Colors.white,
+          color: color ?? Colors.white,
         ),
         child: Row(
           children: [
-            const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  radius: 26,
-                  backgroundColor: XPColors.black,
-                  child: Icon(
-                    Icons.person_add_alt_sharp,
-                    color: Colors.white,
-                  ),
-                )),
-            Flexible(
+            if (icon != null) ...{icon!} else
+              const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    radius: 26,
+                    backgroundColor: XPColors.black,
+                    child: Icon(
+                      Icons.person_add_alt_sharp,
+                      color: Colors.white,
+                    ),
+                  )),
+            Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,17 +53,17 @@ class XPCardTile extends StatelessWidget {
                   Text(
                     title,
                     overflow: TextOverflow.clip,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: XPColors.black,
+                      color: colorText ?? XPColors.black,
                       fontSize: 18,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     description,
-                    style: const TextStyle(
-                      color: XPColors.black,
+                    style: TextStyle(
+                      color: colorText ?? XPColors.black,
                     ),
                   ),
                 ],

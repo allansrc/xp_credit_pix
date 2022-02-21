@@ -5,6 +5,8 @@ class XPCardWrap extends StatelessWidget {
   final String title;
   final Widget? icon;
   final double? width;
+  final Color? colorCard;
+  final Color? colorFont;
   final void Function()? ontap;
   const XPCardWrap({
     Key? key,
@@ -12,13 +14,15 @@ class XPCardWrap extends StatelessWidget {
     this.ontap,
     this.width,
     required this.title,
+    this.colorCard,
+    this.colorFont,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       shadowColor: Colors.white70,
-      color: Colors.transparent,
+      color: colorCard ?? Colors.transparent,
       child: LayoutBuilder(builder: (context, constraints) {
         return Container(
           constraints: BoxConstraints(
@@ -39,9 +43,9 @@ class XPCardWrap extends StatelessWidget {
               Text(
                 title,
                 overflow: TextOverflow.clip,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  color: XPColors.black,
+                  color: colorFont ?? XPColors.black,
                   fontSize: 18,
                 ),
               ),
